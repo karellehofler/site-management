@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://siteadmin:Sekirei11%21>@cluster0.msyee.mongodb.net/users?retryWrites=true&w=majority",
+    "jwtSecret": "mysecretcode"
+}
