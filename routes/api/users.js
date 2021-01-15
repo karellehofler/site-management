@@ -1,18 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const config = require('../../config');
+const config = require('../../config/database');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
+const auth = require('../../middleware/auth');
 const User = require('../../models/User');
-const secret = config.JWT_SECRET;
+const secret = config.jwtSecret;
 
 //Get all Users
 router.get('/', (req, res) => {
-    User.find({})
-    .then(users => {
-        res.json(users);
-    }).catch(err => res.json(err));
+    User.find()
+    .sort({ date: -1 })
+    .then(users => res.json(users)).catch(err => res.json(err));
+});
+
+//Get User Profile
+router.get('/:id', (req,res) => {
+    User.findById(req.params.id)
+    .then(user => res.json(user));
 });
 
 //Register New User
@@ -64,9 +69,15 @@ router.post('/', (req, res) => {
     });
 });
 
-
-//Edit and Update Existing User
-
 //Delete User from website
+router.delete('/delete/:id', (req, res) => {
+    User.findById(req.params.id) 
+    .then((user) => user.remove().then(() => {
+        res.json({ success: true })
+    }))
+    .catch((err) => {
+        res.json({ success: false })
+    })
+});
 
 module.exports = router;

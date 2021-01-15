@@ -15,3 +15,13 @@ const UserSchema = new Schema({
 });
 
 module.exports = User = mongoose.model('user', UserSchema);
+
+module.exports.findByUsername = function(username, callback) {
+    const query = {username}
+    User.findOne(query, callback);
+};
+
+module.exports.findByEmail = function(email, callback) {
+    const query = {email}
+    User.findOne(query, callback);
+}
