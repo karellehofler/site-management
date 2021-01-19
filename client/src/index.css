@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito+Sans:ital,wght@0,700;0,900;1,400&display=swap');
+:root {
+  --primary-color: #EEBB12;
+  --secondary: #5C00C5;
+  --disabled: #DBC6A0;
+  --white: #FFFFFF;
+  --text: #362D22;
+  --subtext: #625647;
+  --text-light: #FFEABA;
+  --theme-ruby: #C6010E;
+  --theme-pacific: #00A7C2;
+  --theme-violet: #9B1DDB;
+  --theme-charcoal: #252525;
+  --theme-classic-grey: #EDEDED;
+  --theme-mid-grey: #797979;
+}
+
+h1{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+h2{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+h3, h4, h5, h6{
+  font-family: "Nunito Sans", sans-serif;
+}
+
+p{
+  font-size: 18px;
+  font-family: "Noto Serif", serif;
+}
+
+small {
+  font-size: .75em;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+}
