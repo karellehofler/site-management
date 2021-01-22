@@ -20,8 +20,8 @@ const LoginForm = () => {
   
     LoginForm.propTypes = {
         isAuthenticated: PropTypes.bool,
-        error: PropTypes.func.isRequired,
-        loginUser: PropTypes.func.isRequired,
+        error: PropTypes.func,
+        loginUser: PropTypes.func,
         clearErrors: PropTypes.func.isRequired
     }
 
@@ -48,7 +48,7 @@ const LoginForm = () => {
 
     return(
         <form>
-            { msg ? <span>{msg.msg}</span> : null }
+            { msg ? <span>{error.msg.msg}</span> : null }
             <h3>Login</h3>
             <input type="text" onChange={onEmailChange} placeholder="email" />
             <input type="password" onChange={onPasswordChange}placeholder="somepassword" />

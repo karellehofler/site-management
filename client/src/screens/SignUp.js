@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SignUpForm from '../components/signup/SignUpForm';
 
 export default function SignUp() {
     
@@ -6,8 +7,9 @@ export default function SignUp() {
 
     // }, [])
     return(
-        <div>
-
-        </div>
+        <>
+            <h1>Sign Up</h1>
+            <SignUpForm />
+        </>
     )
 }

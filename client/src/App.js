@@ -1,20 +1,26 @@
 import React, { useEffect } from 'react';
 import Nav from './components/nav/Nav';
-import LoginForm from './components/login/LoginForm';
-import { store } from './index';
-import { loadUser } from './redux/actions/auth';
+// import { loadUser } from './redux/actions/auth';
+import Routes from './components/Routes';
+// import { useDispatch, useSelector } from 'react-redux';
+import { Provider } from 'react-redux'
+import store from './store';
 
 function App() {
 
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
+  // const user = useSelector((state) => state.auth.user);
+  // const dispatch = useDispatch();
 
+  // if(user) {
+  //   dispatch(loadUser());
+  // }
+  
   return (
-    <div className="App">
-      <Nav />
-      <LoginForm />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Routes />
+      </div>
+    </Provider>
   );
 }
 export default App;

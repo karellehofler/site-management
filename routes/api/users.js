@@ -21,7 +21,7 @@ router.get('/:id', (req,res) => {
 });
 
 //Register New User
-router.post('/', (req, res) => {
+router.post('/signup', (req, res) => {
     const { name, username, email, password } = req.body;
 
     if(!name || !email || !password || !username ) {
@@ -31,6 +31,7 @@ router.post('/', (req, res) => {
     User.findOne({ email })
     .then(user => {
         if(user) return res.status(400).json({ msg: 'User already exists'});
+        
         const newUser = new User({
             name, username, email, password
         });

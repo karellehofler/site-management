@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito+Sans:ital,wght@0,700;0,900;1,400&display=swap');
+
 :root {
-  --primary-color: #EEBB12;
-  --secondary: #5C00C5;
+  --primary: #EEBB12;
+  --primary-light: #FFEABA;
+  --primary-mute: #DBC6A0;
+  --secondary: #E70B4D;
   --disabled: #DBC6A0;
   --white: #FFFFFF;
   --text: #362D22;
@@ -46,4 +49,33 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
+}  
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#iphone-mockup {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  margin: 25px;
+}
+
+small {
+  font-size: 0.5em;
+  color: var(--secondary);
+}
+
+#site-nav a {
+  color: var(--primary);
 }
